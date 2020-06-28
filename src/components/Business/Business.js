@@ -6,12 +6,12 @@ class Business extends React.Component{
         return (
             <div className="Business">
                 <div className="image-container">
-                    <img src={this.props.business.imageSrc} alt=''/>
+                    <a href={this.props.business.url} target="_blank" rel="noopener noreferrer"><img src={this.props.business.imageSrc} alt=''/></a>
                 </div>
                 <h2>{this.props.business.name}</h2>
                 <div className="Business-information">
                     <div className="Business-address">
-                    <p>{this.props.business.address}</p>
+                    <p><a href="https://www.google.de">{this.props.business.address}</a></p>
                     <p>{this.props.business.city}</p>
                     <p>{this.props.business.state} {this.props.business.zipCode}</p>
                     </div>
