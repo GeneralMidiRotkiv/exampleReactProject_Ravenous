@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../../logo.svg';
+/* import logo from '../../logo.svg'; */
 import './App.css';
 import BusinessList from "../BusinessList/BusinessList";
 import SearchBar from "../SearchBar/SearchBar"
-import Business from '../Business/Business';
+/* import Business from '../Business/Business'; */
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -26,7 +26,7 @@ const businesses = [
   business,
 ];
 
-function App() {
+/* function App() {
   return (
     <div className="App">
       <h1>ravenous</h1>
@@ -34,6 +34,22 @@ function App() {
         <BusinessList business={businesses}/>
     </div>
   );
+} */
+
+class App extends React.Component {
+  searchYelp(term, location, sortBy){
+    console.log(`Searching '${term}' in '${location}', sorted by '${sortBy}'`);  
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <h1>ravenous</h1>
+          <SearchBar searchYelp={this.searchYelp}/>
+          <BusinessList business={businesses}/>
+      </div>
+    );
+  }
 }
 
 export default App;
